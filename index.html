@@ -32,7 +32,7 @@
     // Function to determine dungeon or monster based on seed
     function displayContent(seed) {
         // Use the seed to determine if it's a dungeon or monster
-        const isMonster = seed.charCodeAt(0) % 4 === 0; // Change divisor for balance
+        const isMonster = seed % 4 === 0; // Change divisor for balance
 
         const messageElement = document.getElementById('message');
 
@@ -460,7 +460,7 @@
 { name: "Ancient red dragon", cr: 24 },
 { name: "Tarrasque", cr: 30 },
             ];
-            const monster = monsters[seed.charCodeAt(0) % monsters.length];
+            const monster = monsters[seed % monsters.length];
             messageElement.innerHTML = `This orb shard is protected by a ${monster.name} (Challenge Rating: ${monster.cr}).`;
         }
     }
