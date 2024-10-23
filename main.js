@@ -10,7 +10,7 @@ if(orbType = 1){
 
 class RandomEncounterGenerator {
     constructor(seed) {
-        this.seed = seed;
+        this.seed = window.location.search.split(8);
         this.random = this.createRandom(seed);
     }
 
