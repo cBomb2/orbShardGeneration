@@ -29,10 +29,11 @@
         return params.get('seed');
     }
 
-    // Function to determine dungeon or monster
+    // Function to determine dungeon or monster based on seed
     function displayContent(seed) {
-        const rand = Math.random();
-        const isDungeon = rand < 0.75; // 75% chance for dungeon
+        // Use the seed to determine if it's a dungeon or monster
+        const isDungeon = seed.charCodeAt(0) % 4 === 0; // Change divisor for balance
+
         const messageElement = document.getElementById('message');
 
         if (isDungeon) {
